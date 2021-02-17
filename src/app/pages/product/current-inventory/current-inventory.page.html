@@ -1,0 +1,59 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Current Inventory</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+
+
+    <!-- fab placed to the (vertical) center and end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="addProduct()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+    <ion-searchbar showCancelButton="focus" (ionInput)="findInventoryName($event)"></ion-searchbar>
+      <ion-list>
+        <ion-grid>
+          <ion-row style="background-color: #FAFAFA;" *ngFor="let product of allProducts">
+            <ion-col>
+              <img src="{{product.image}}" class="imageSize">
+            </ion-col>
+            <ion-col class="textClass" >
+              <b>{{product.product_name}}</b>
+             <p>Sale : $ {{product.sale_price}}</p>
+             <p>Qty : {{product.qty}}</p>
+            </ion-col >
+            <ion-col class="iconClass">
+              <ion-icon name="bag-add-outline" style="color: #6B3D1A;" (click)="productDetails(product)"></ion-icon>
+              <ion-icon name="create-outline" (click)="editProduct(product)" *ngIf="ifLogin.user.parent_id==1"></ion-icon>
+              <ion-icon name="close-outline" (click)="deleteProduct(product.id)" style="color: red;" *ngIf="ifLogin.user.parent_id==1"></ion-icon>
+            </ion-col>
+          </ion-row>
+          </ion-grid>
+    </ion-list>
+
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      
+  </ion-content>
+  

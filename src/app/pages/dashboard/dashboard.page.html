@@ -1,0 +1,138 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+ <strong><h2 class="text-color">Hi,{{this.ifLogin.user.username}}</h2></strong>
+ <h5 class="text-color2 mt-1 mb-1">Welcome To Craft Beer</h5>
+  <ion-card class="mt-1 mb-1" (click)="invoiceDetails()">
+      <ion-grid class="p-1 stock-show">
+        <ion-row >
+          <ion-col >
+            <h6 class="text-color1 m-0 p-0">You are doing great this month</h6>
+            <ion-row  >
+              <ion-col  >
+                <p class="text-style3 mb-0">Monthly Purchased</p>
+              </ion-col>
+              <ion-col  >
+                <p class="font-wid mb-0">{{totalPurchage}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col size="4" class="invoice-back"> 
+            <div class="show-invoice">
+              <img class="image-invoice" src="assets/icons/invoice.png">
+            </div>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+  </ion-card>
+
+  
+
+  <!-- order status start  -->
+  <div class="mt-3">
+    <ion-grid class="p-2">
+      <Strong class="status-lebel" style="font-weight: 900;">Order Status</Strong>
+      <!-- <button class="usebtn">Status List</button> -->
+      <ion-row class="p-0 mb-1" style="background-color: #FAFAFA;" *ngFor = "let latestOr of latestOrde">
+        <ion-col  size="3">
+          <img src="/assets/icons/productImg.jpg" height="70" width="70">
+        </ion-col>
+        <ion-col size="7" (click)="showOrderTeacking(latestOr.id)" >
+          <div>
+            <p style="font-size:12px ;font-size: 12px;margin-top:2vw;color: #6B3D1A;">{{latestOr.order_number}}</p>
+            <p style="font-size:11px"><b>Orderd On :</b> {{latestOr.order_date}}</p>
+            <p style="font-size:11px"><b>Delivery Status :</b> {{latestOr.order_date}}</p>
+            <p style="font-size:11px"><b>Payment Pending :</b>{{latestOr.order_date}}</p>
+          </div>
+        </ion-col>
+        <ion-col size="1" (click)="showOrderTeacking(latestOr.id)">
+          <p class="order-status__product-quantity-lebel" style="font-size:12px">Qty<br> <span class="order-quantity">10</span></p>
+        </ion-col>
+        <ion-col size="1" class="go-to" (click)="showOrderTeacking(latestOr.id)">
+          <p style="padding-top: 2vh;font-size: 6vh;"><i class="fas fa-chevron-right"></i></p>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+  </div>
+  <!-- order status end  -->
+
+  <ion-grid >
+    <ion-row>
+      <div class="employee-title">
+        <Strong class="text-color" style="font-weight: 900;">Inventory Management</Strong>
+      </div> 
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment scrollable  (ionChange)="getScrollData($event)">
+        <ion-segment-button *ngFor="let inventor of inventory" value="{{inventor}}" class="p-1">
+          <div class="product-name-container">
+          <div style="text-transform: capitalize;font-size: 12px;font-weight: 600;">{{inventor.product_name}}</div>
+        </div>
+          <div >
+            <div class="progress blue">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">{{inventor.qty}}</div>
+            </div>
+        </div>
+          </ion-segment-button>
+      </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+  <!-- Employee List and create employee start  -->
+    <ion-grid class="lst-ionic-grid" *ngIf="ifLogin.user.parent_id==1">
+      <ion-row>
+        <div class="employee-title">
+          <Strong class="text-color" style="font-weight: 900;">Curret Employee</Strong>
+          <button class="usebtn" (click)="createEmployee()">Create User</button>
+        </div> 
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-segment scrollable  (ionChange)="getScrollData($event)">
+          <ion-segment-button *ngFor="let use of user" value="{{use.id}}" class="p-1">
+              <div class="show-three">
+                  <img src="{{use.image}}">
+                  <div class="employee__details">
+                    <p style="font-weight: bolder;text-align: left;padding: 0px 5px;color: #6B3D1A;    font-size: 11px;
+                    text-transform: capitalize;">MR {{use.name}}</p> 
+                    <p style="text-align: left;font-size: 8px;
+                    text-transform: capitalize;">Id: E000{{use.id}}</p>
+                  </div>             
+              </div>
+            </ion-segment-button>
+        </ion-segment>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- Employee List and create employee end  -->
+
+  <ion-button (click)="placeOrder()" class="orderButton" expand="full">Place Order</ion-button>
+
+</ion-content>
+

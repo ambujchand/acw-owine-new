@@ -1,0 +1,45 @@
+  
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Product Catalogue</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+    <!-- Searchbar with cancel button shown on focus -->
+    <ion-searchbar showCancelButton="focus" (ionInput)="findCategoryName($event)"></ion-searchbar>
+
+  <Strong class="text-color">Product Catagory</Strong>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let productCat of productCategory">
+          <ion-card (click)="catagoryProducts(productCat.id)">
+            <img src="{{productCat.image}}" style="height: 35vw;
+            width: 46vw;">
+            <br>
+            <strong class="ml-2">{{productCat.name}}</strong> 
+        </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

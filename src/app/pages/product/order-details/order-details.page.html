@@ -1,0 +1,56 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Order Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    
+    <ion-searchbar showCancelButton="focus" (ionInput)="findInventoryName($event)"></ion-searchbar>
+
+      <!-- order status start  -->  
+  <div class="mt-3">
+    <ion-grid>
+      <ion-row class="p-0 mb-1" style="background-color: #FAFAFA;" *ngFor = "let product of allProducts">
+        <ion-col  size="3" (click)="orderDetails(product)">
+          <img src="/assets/icons/productImg.jpg" height="70" width="70">
+        </ion-col>
+        <ion-col (click)="orderDetails(product)" >
+          <div>
+            <p style="font-size:12px ;font-size: 12px;margin-top:2vw;color: #6B3D1A;"><b>Orderd Id :</b> {{product.order_number}}  </p>
+            <p style="font-size:11px"><b>Orderd On :</b> {{product.order_date}}</p>
+            <p style="font-size:11px"><b>Delivery Status :</b> {{product.status}}</p>
+          </div>
+        </ion-col>
+        <ion-col size="2" style="text-align: center; margin-top: 10px;" (click)="orderDetails(product)">
+          <b  style="font-size:12px">Items<br> <span class="order-quantity">{{product.order_count}}</span></b>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      
+  </ion-content>
+  

@@ -1,0 +1,77 @@
+
+.centerClass {
+    text-align: center;
+}
+
+img {
+    width: 50%;
+}
+
+h2 {
+    font-size: 19px;
+    padding: 7vw 7vw;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.buttonStyle2 {
+    background-color: #612E07;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 46%), 0 3px 6px rgba(0,0,0,0.23);
+    border: 0px;
+    width: 100%;
+    color: #F2A401;
+}
+
+.buttonStyle3 {
+    background-color: #612E07;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 10%), 0 3px 6px rgba(0, 0, 0, 0.23), inset 0px 16px 8px -10px #f2a401b8, inset 1px -16px 8px -10px #f2a401b8;
+    border: 0px;
+    width: 100%;
+    color: #F2A401;
+    // box-shadow:inset 0px 16px 8px -10px #f2a401b8, inset 1px -16px 8px -10px #f2a401b8;
+}
+
+.buttonStyle {
+    background-color: #612E07;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 46%), 0 3px 6px rgba(0,0,0,0.23);
+    border: 0px;
+}
+
+p {
+    font-size: 13px;
+}
+
+span {
+    border-color: white;
+    background-color: white;
+}
+
+input {
+    border-color: white;
+}
+
+.input-style {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #612E07;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+.form-control:focus {
+    box-shadow: 0 0 0 0rem #f8f9fa00;
+    border-color: #80bdff00;
+}

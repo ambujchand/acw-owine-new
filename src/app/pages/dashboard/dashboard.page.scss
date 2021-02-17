@@ -1,0 +1,336 @@
+ion-icon {
+    font-size: 5vh;
+}
+
+.scroll-content {
+    padding-top: 0px !important;
+  }
+
+.text-color{
+    color: #6B3D1A;
+    font-weight: 700;
+    margin-left: 2vh;
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+p {
+    margin-bottom: 0px;
+}
+.text-color2{
+    color: #6B3D1A;
+   // font-weight: 100;
+    margin-left: 2vh;
+}
+.status-lebel {
+    color: #6B3D1A;
+}
+.text-color1 {
+    color: #6B3D1A;
+    margin-left: 13px;
+    font-size: 13px;
+}
+.text-style3{
+    color: #6B3D1A;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 17px;
+    margin-top: 5px;
+}
+
+.show-invoice {
+    background-color: #6B3D1A;
+    height: 70px;
+    position: absolute;
+    width: 148%;
+    margin-top: -5px;
+    text-align: center;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 43% 50%);
+}
+ion-col {
+    // text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+ion-row {
+    padding: 0px;
+    margin: 0px;
+}
+
+.font-wid{
+    color: #D3751D;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.show-three{
+    width: 27vw;
+}
+
+ion-segment-button{
+    // border-radius: 5px;
+    // margin: 5px 4px;
+    // width: 35%;
+    // height: 23vh;
+    // box-shadow: 0 3px 0px rgb(0 0 0 / 7%), -1px 1px 4px rgb(0 0 0 / 23%);
+    border-radius: 5px; 
+    width: 28%;
+    height: 23vh;
+
+}
+
+.product-name-container{
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.usebtn {
+    position: absolute;
+    right: 0;
+    border-radius: 25px;
+    padding: 2px 15px 2px 15px;
+    background-color: white;
+    color: #6B3D1A;
+    font-size: 12px;
+    border: 1px solid;
+    margin-right: 10px;  
+}
+
+.orderButton {
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    height: 46px;
+    font-size: 20px;
+    margin: 0;
+    color: #FFCC6A;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+.stock-show {
+    padding-left: 10px !important;
+}
+
+.image-invoice {
+    width: 43px;
+    margin-top: 9px;
+    left: 44px;
+    position: absolute;
+    -webkit-filter: drop-shadow(5px 5px 5px #222222);
+  filter: drop-shadow(5px 5px 5px #222222);
+}
+.go-to {
+    text-align: right;
+    padding-right: 10px;
+}
+.go-to p i {
+    font-size: 10px;
+    font-size: 32px;
+}
+.go-to p {
+    line-height: 1.2em;
+}
+p.order-status__product-quantity-lebel {
+    font-size: 15px;
+}
+.order-status__product-name-lebel {
+    font-weight: bolder;
+    color: #6B3D1A;
+}
+span.order-date {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+p.order-status__product-name-lebel {
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+}
+.order-status__product-quantity-lebel {
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+}
+.employee-title {
+    margin-top: 8px;
+}
+.employee__details {
+    text-align: left;
+    padding: 0px 5px;
+}
+
+.lst-ionic-grid {
+    // margin-bottom: 8vh;
+}
+ion-segment-button.p-1.circle-progress {
+    width: 30vw;
+    height: 40Vw;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+    width: 30vw;
+    /* height: 48px; */
+}
+
+
+
+
+
+.progress{
+    width: 70px;
+    height: 70px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progress .progress-left{
+    left: 0;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress .progress-right{
+    right: 0;
+}
+.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+    width: 80%;
+    height: 80%;   
+    background: #fff;
+    font-size: 20px;
+    color: #fff;
+    line-height: 66px;
+    position: absolute;
+    color: black;
+    justify-content: center;
+    top: 5%;
+    left: 5%;
+}
+.progress.blue .progress-bar{
+    border-color: red;
+    border-width: 6px;
+}
+.progress.blue .progress-left .progress-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+.progress.yellow .progress-bar{
+    border-color: #fdba04;
+}
+.progress.yellow .progress-left .progress-bar{
+    animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.pink .progress-bar{
+    border-color: #ed687c;
+}
+.progress.pink .progress-left .progress-bar{
+    animation: loading-4 0.4s linear forwards 1.8s;
+}
+.progress.green .progress-bar{
+    border-color: #1abc9c;
+}
+.progress.green .progress-left .progress-bar{
+    animation: loading-5 1.2s linear forwards 1.8s;
+}
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+@media only screen and (max-width: 990px){
+    .progress{ margin-bottom: 0px; }
+}

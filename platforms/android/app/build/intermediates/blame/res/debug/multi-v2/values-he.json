@@ -1,0 +1,49 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\GeoAlgo\\my-shop\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Thinkpad 1\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.3.0.aar\\38b5a49b83b75f879ab2c5e06e0e1a4d\\res\\values-he\\values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\projects\\my-shop\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ambuj\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.3.0.aar\\e9f1a7003605db6012f415c1c174e7d6\\res\\values-he\\values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\GeoAlgo\\Ace-Wine\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Thinkpad 1\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.3.0.aar\\38b5a49b83b75f879ab2c5e06e0e1a4d\\res\\values-he\\values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    }
+                }
+            ]
+        }
+    ]
+}

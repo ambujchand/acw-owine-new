@@ -1,0 +1,61 @@
+
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Order Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    
+    <ion-searchbar showCancelButton="focus" (ionInput)="findOrderDetailsName($event)"></ion-searchbar>
+    <div class="mr-2" *ngIf="details">
+      <div class="orderDetails">
+        <strong style="font-size: 20px;font-weight: 800;">Order Id : <small>{{details.order_number}}</small></strong><br>
+        <strong style="font-size: 15px;">Order On : <small>{{details.order_date}}</small></strong><br>
+        <strong style="font-size: 15px;">Delevery Status : <small>{{details.status}}</small></strong>
+      </div>
+        <!-- order status start  -->
+      <div class="mt-0">
+      <ion-list>
+        <ion-grid>
+          <ion-row style="background-color: #FAFAFA;" *ngFor="let detail of details.details"> 
+            <ion-col size="3">
+              <img src="{{detail.image}}" class="imageSize">
+            </ion-col>
+            <ion-col class="textClass" >
+              <b>{{detail.product_name}}</b>
+            <p>Product Id : {{detail.order_qty}}</p>
+            <p>Cost : $ {{detail.total_amount}}</p>
+            </ion-col >
+            <ion-col size="3" style="text-align:center">
+              <p>Quantity</p>
+              <p>{{detail.order_qty}}</p>
+            </ion-col>
+          </ion-row>
+          </ion-grid>
+    </ion-list>
+      </div>
+    </div>
+
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      
+  </ion-content>
+  

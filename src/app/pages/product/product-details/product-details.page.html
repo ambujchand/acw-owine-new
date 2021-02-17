@@ -1,0 +1,56 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Product Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+
+  <div style="margin:5px 10px 5px 10px">
+    <strong>{{productDetails.product_name}} </strong><br><br>
+    <!-- <small>Brand : any</small> -->
+    <!-- <p>brand : abcdd</p> -->
+    <img src="{{productDetails.image}}" class="imageSize" style="height: 38vh;width: 53vh;border-radius: 10px;margin-bottom: 2vh">
+    <p>{{productDetails.product_description}}</p>
+        <ion-grid class="pl-0">
+          <ion-row >
+            <ion-col class="pl-0">
+              <b>Order</b>
+            </ion-col>
+            <ion-col style="padding-right:1px;text-align: center;" (click)="removeQty()" >
+              <ion-icon name="remove-outline" style="background-color: #dee2e6cc;font-size: 5vh;"></ion-icon>
+            </ion-col>
+            <ion-col style="padding:5px 0px 0px 0px">
+              <input type="number" [(ngModel)]="formData.order_qty" name="order_qty" style="width: 45px;">
+            </ion-col>
+            <ion-col style="padding-right:1px" (click)="addQty()">
+              <ion-icon name="add-outline" style="background-color: #dee2e6cc;font-size: 5vh;"></ion-icon>
+            </ion-col>
+            <ion-col style="padding-top: 0px;padding-right:1px">
+              <ion-button (click)="addOrder()" style="color: #F6B003;" >Add to Cart</ion-button><br>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    <b>Cost : {{productDetails.unit_price}}</b>
+  </div>
+  <div class="details" *ngIf="rouerUrl =='/product-catagory'">
+    <p style="font-size: 18px;margin-left: 3vh;color: #F6B003;">Available Quantity : {{productDetails.qty_per_unit? productDetails.qty_per_unit : productDetails.qty}}</p>
+    <div>
+      <span style="font-size: 18px;margin-left: 3vh;color: #F6B003;">Sold Quantity</span>
+      <input type="number" [(ngModel)]="formData.sold_qty" name="description" class="inputClass">
+      <input type="date" [(ngModel)]="formData.sold_date" readonly="readonly" name="description" style="margin-left: 0px;width: 18vh;color: #F6B003" class="inputClass" >
+      <input (click)="updateSoldQty()" class="button-style" type="button" name="Update" value="Update">
+    </div>
+  </div>
+</ion-content>

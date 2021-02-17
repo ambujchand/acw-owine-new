@@ -1,0 +1,67 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Your Orders</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+
+      <ion-list style="margin-left: 3vh;">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <b>Product</b>
+              </ion-col>
+              <ion-col>
+                <b>Quantity</b>
+              </ion-col>
+              <ion-col>
+                <b>Unit Price</b>
+              </ion-col>
+              <ion-col>
+                <b>Price</b>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngFor="let order of placeOrderList">
+              <ion-col class="orderStype">
+                <p>{{order.product_name}}</p>
+              </ion-col>
+              <ion-col class="orderStype">
+                <p>{{order.order_qty}}</p>
+              </ion-col>
+              <ion-col class="orderStype">
+                <p>${{order.unit_price}}</p>
+              </ion-col>
+              <ion-col class="orderStype">
+                <p>${{order.unit_price * order.order_qty}}.00</p>
+              </ion-col>
+                </ion-row>
+            <ion-row style="margin-top: 4vh;">
+              <ion-col class="orderStype">
+                <p>Subtotal : </p><br>
+                <p>Total : </p>
+              </ion-col>
+              <ion-col class="orderStype">
+              </ion-col>
+              <ion-col class="orderStype">
+              </ion-col>
+              <ion-col class="orderStype">
+                <p>${{totalAmount}}</p><br>
+                <p>${{totalAmount}}</p>
+
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+
+      </ion-list>
+  <ion-button (click)="placeOrder()" class="orderButton" expand="full">Place Order</ion-button>
+
+      
+  </ion-content>
+  

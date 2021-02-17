@@ -1,0 +1,46 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Product List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+    
+    <ion-searchbar showCancelButton="focus" (ionInput)="findProductName($event)"></ion-searchbar>
+      <ion-list>
+          <ion-grid>
+            <ion-row style="background-color: #FAFAFA;" *ngFor="let product of allProducts">
+              <ion-col size="3">
+                <img src="{{product.image}}" class="imageSize">
+              </ion-col>
+              <ion-col class="textClass" (click)="productDetails(product)">
+                <b>{{product.product_name}}</b>
+               <p>Available Quantity : {{product.qty_per_unit}}</p>
+               <p>Price : $ {{product.unit_price}}</p>
+              </ion-col>
+              <!-- <ion-col size="2" class="iconClass">
+                <i class="fas fa-cart-plus"></i>
+              </ion-col> -->
+            </ion-row>
+            </ion-grid>
+      </ion-list>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      
+  </ion-content>
+  

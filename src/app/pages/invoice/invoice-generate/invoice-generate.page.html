@@ -1,0 +1,131 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Invoice</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+
+    <ion-grid>
+        <ion-row style="text-align: end;">
+            <ion-col *ngIf="invoiceDetail">
+                <h4>Invoice</h4>
+                <p>Invoice no : {{invoiceDetail.order_number}}</p>
+                <p>Invoice Date : {{invoiceDetail.order_date}}</p>
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="text-align:start">
+            <ion-col>
+                <h4>ACE Wine</h4>
+                <p>190 North Bend River Road</p>
+                <p>Zip Code: 41635</p>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col style="text-align: start;" *ngIf="barDetails">
+                <h4 >Bill To</h4>
+                <p>Company Name : {{barDetails.company_name}} </p>
+                <p>Adddess :  {{barDetails.address}}</p>
+                <p>Zip Code: {{barDetails.pincode}}</p>
+            </ion-col>
+            <ion-col style="text-align: end;" *ngIf="barDetails">
+                <h4>Ship To </h4>
+                <p>Company Name : {{barDetails.company_name}} </p>
+                <p>Adddess :  {{barDetails.address}}</p>
+                <p>Zip Code: {{barDetails.pincode}}</p>
+            </ion-col>
+        </ion-row>
+            <p>Date Of Supply: <span>33eww33331</span></p>
+            <div class="table-responsive">
+              <table class="table">
+                <thead style="background-color: #e9ecef">
+                  <tr>
+                    <th>#</th>
+                    <th>Product SKU</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Discount</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="invoiceDetail">
+                  <tr *ngFor="let orderdetails of invoiceDetail.details;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{orderdetails.sku}}</td>
+                    <td>{{orderdetails.product_name}}</td>
+                    <td>{{orderdetails.pivot.qty}}</td>
+                    <td>{{orderdetails.unit_price}}</td>
+                    <td>{{orderdetails.discount}}</td>
+                    <td>{{orderdetails.pivot.total_amount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="total_invoice_amount table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col">$ {{subtotal}}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tax">
+                            <tr>
+                                <td>Taxable Amount</td>
+                                <td>{{textAmount}}</td>
+                            </tr>
+                        </tbody>
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Total</th>
+                                <th scope="col">$ {{grandTotal}}</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <p class="in-text">Total In Words: Two hundred thirty Only</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+                <p class="bank-name-details">Bank Details</p>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Account Holder Name</th>
+                            <th scope="col">Account No</th>
+                            <th scope="col">IFSC Code</th>
+                            <th scope="col">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bank-info">
+                        <tr>
+                            <td>ACE Wine</td>
+                            <td>1234567891011</td>
+                            <td>XB7891011</td>
+                            <td>XBank</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <ion-row >
+            <ion-col style="text-align: end;">
+                <h4>For, ACE WINE</h4>
+                <p>Joan J. Edwards</p>
+                <p>Authorized Signature</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

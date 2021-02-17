@@ -1,0 +1,49 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\projects\\my-shop\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ambuj\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f8d03bb1e43de26c95f206261293c9d1\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "108",
+                        "endOffsets": "159"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\GeoAlgo\\my-shop\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Thinkpad 1\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\dd3fd992ea346e924b1f6fa7b7c42190\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "108",
+                        "endOffsets": "159"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\GeoAlgo\\Ace-Wine\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Thinkpad 1\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\dd3fd992ea346e924b1f6fa7b7c42190\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "108",
+                        "endOffsets": "159"
+                    }
+                }
+            ]
+        }
+    ]
+}

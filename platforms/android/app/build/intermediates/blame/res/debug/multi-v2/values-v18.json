@@ -1,0 +1,70 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\projects\\my-shop\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ambuj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.0.aar\\b9a71fd09429467c81fae2c9c1f18ef0\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "287",
+                        "endColumns": "48",
+                        "endOffsets": "331"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\GeoAlgo\\my-shop\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Thinkpad 1\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.0.aar\\76246a182cb7b6136148201c1edaa3bb\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "287",
+                        "endColumns": "48",
+                        "endOffsets": "331"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\GeoAlgo\\Ace-Wine\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Thinkpad 1\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.0.aar\\76246a182cb7b6136148201c1edaa3bb\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "287",
+                        "endColumns": "48",
+                        "endOffsets": "331"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

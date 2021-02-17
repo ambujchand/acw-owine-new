@@ -1,0 +1,34 @@
+ion-item{
+    border-radius: 5px !important;
+    font-size: 4vw;
+    border: 1px solid #bdb8b8 !important;
+    --background: rgb(255 255 255) !important;
+}
+
+.item-native {
+    padding: 16px;
+}
+
+.item-inner{
+    padding: 0px !important;
+}
+ion-icon{
+    margin: 5vw 1vw 1vw 0vw;
+}
+
+
+.imgStyle {
+    text-align: center;
+}
+
+img{
+    height: 14vh;
+    width: 14vh;
+}
+
+
+ion-select{
+    float: right;
+    right: 10px;
+    position: absolute;
+}

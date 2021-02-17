@@ -1,0 +1,45 @@
+.orderButton {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 46px;
+    font-size: 15px;
+    margin: 0;
+    color: #FFCC6A;
+    text-transform: capitalize;
+}
+
+
+.trash{
+    color: red;
+    margin-right: 2vw;
+    font-size: 6vw;
+}
+.edit{
+    font-size: 6vw;
+}
+
+ion-row {
+    background-color: #FAFAFA;
+    margin-bottom: 2vw;
+}
+
+b{
+    color: #6B3D1A;
+}
+
+.iconClass {
+    padding: 0px;
+    margin: 5vw 0vw 0vw 0vw
+}
+
+p{
+    padding: 1px;
+    margin: 1px;
+    font-size: 4vw;
+}
+
+.imageSize {
+    height: 22vw;
+    width: 20vw;
+}
