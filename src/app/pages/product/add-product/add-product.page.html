@@ -1,83 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add Product</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Add New Product</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">
 
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles">
+    <ion-refresher-content pullingText="Pull to refresh" refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
   <!-- <p class="pt-2 m-0" style="text-align: center; font-size: 20px; color: #6B3D1A;">Add New Product</p> -->
   <form [formGroup]="addProductForm" (ngSubmit)="addProduct()" class="mt-2">
 
-    <ion-card >
+    <ion-card>
       <ion-item>
-        <ion-label>Product Catagory</ion-label>
-        <ion-select interface="popover" placeholder="Select Catagory" formControlName="category_id" (ngModelChange)="selectProducts($event)">
-          <ion-select-option *ngFor="let category of categoryProducts" selected="selected" value="{{category.id}}">{{category.name}}</ion-select-option>
+        <ion-label>Product Category</ion-label>
+        <ion-select interface="popover" placeholder="Select Catagory" formControlName="category_id"
+          (ngModelChange)="selectProducts($event)">
+          <ion-select-option *ngFor="let category of categoryProducts" selected="selected" value="{{category.id}}">
+            {{category.name}}</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-card>
 
-    <ion-card >
+    <ion-card>
       <ion-item>
         <ion-label>Product Name</ion-label>
-        <ion-select interface="popover" placeholder="Select Product Name" formControlName="product_id" (ngModelChange)="selectProduct($event)">
-          <ion-select-option *ngFor="let product of products" value="{{product.id}}">{{product.product_name}}</ion-select-option>
+        <ion-select interface="popover" placeholder="Select Product Name" formControlName="product_id"
+          (ngModelChange)="selectProduct($event)">
+          <ion-select-option *ngFor="let product of products" value="{{product.id}}">{{product.product_name}}
+          </ion-select-option>
         </ion-select>
       </ion-item>
     </ion-card>
- 
-<ion-card>
-  <ion-item>
-    <ion-label position="floating">Cost</ion-label>
-    <ion-input required="true" value="Readonly" readonly type="number" formControlName="cost"></ion-input>
-  </ion-item>
-</ion-card>
 
-<ion-card>
-  <ion-item>
-    <ion-label position="floating">Sale Price</ion-label>
-    <ion-input required="true" type="number" formControlName="sale_price"></ion-input>
-  </ion-item>
-</ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Cost</ion-label>
+        <ion-input required="true" value="Readonly" readonly type="number" formControlName="cost"></ion-input>
+      </ion-item>
+    </ion-card>
 
-<ion-card>
-  <ion-item>
-    <ion-label position="floating">Product Description</ion-label>
-    <ion-input  value="Readonly" readonly type="text" formControlName="prouct_desc"></ion-input>
-  </ion-item>
-</ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Sale Price</ion-label>
+        <ion-input required="true" type="number" formControlName="sale_price"></ion-input>
+      </ion-item>
+    </ion-card>
 
-
-
-<ion-card >
-  <ion-item>
-    <ion-label position="floating">Current Inventory</ion-label>
-    <ion-input required="true" type="number" formControlName="qty"></ion-input>
-  </ion-item>
-</ion-card>
-
-
-  <div class="imgStyle" *ngIf="image">
-    <!-- <img src="assets/icons/test.jpg"> -->
-    <img src="{{image}}">
-  </div>
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Product Description</ion-label>
+        <ion-input value="Readonly" readonly type="text" formControlName="prouct_desc"></ion-input>
+      </ion-item>
+    </ion-card>
 
 
 
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Current Inventory</ion-label>
+        <ion-input required="true" type="number" formControlName="qty"></ion-input>
+      </ion-item>
+    </ion-card>
 
-    <ion-button [disabled]="!addProductForm.valid" type="submit" shape="round" slot="end" style="margin-left: 61vw;margin-bottom: 2px;">Submit</ion-button>
-    
-</form>
+
+    <div class="imgStyle" *ngIf="image">
+      <!-- <img src="assets/icons/test.jpg"> -->
+      <img src="{{image}}">
+    </div>
+
+
+
+
+    <ion-button [disabled]="!addProductForm.valid" type="submit" shape="round" slot="end"
+      style="margin-left: 61vw;margin-bottom: 2px;">Submit</ion-button>
+
+  </form>
 </ion-content>

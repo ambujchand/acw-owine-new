@@ -1,57 +1,56 @@
-  <ion-content [fullscreen]="true">
-    <ion-card-content style="background:url(assets/icons/background.jpeg) no-repeat center center/cover; height: 100vh;">
-      <div class="centerClass">
-        <img src="/assets/icons/beerlogo.png">
-      </div>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <button class="btn btn-info {{buttonColor1}}" (click)="loginOwner()">Owner</button>
-          </ion-col>
-          <ion-col>
-            <button class="btn btn-info {{buttonColor2}}" (click)="loginEmployee()">Employee</button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+<ion-content [fullscreen]="true">
+  <ion-card-content style="background:url(assets/icons/background.jpeg) no-repeat center center/cover; height: 100vh;">
+    <div class="centerClass">
+      <img src="/assets/icons/beerlogo.png">
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button class="btn btn-info {{buttonColor1}}" (click)="loginOwner()">Owner</button>
+        </ion-col>
+        <ion-col>
+          <button class="btn btn-info {{buttonColor2}}" (click)="loginEmployee()">Employee</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-      <div class="centerClass">
-        <strong><h2> {{loginStatus}} </h2></strong>
-      </div >
+    <div class="centerClass">
+      <strong>
+        <h2> {{loginStatus}} </h2>
+      </strong>
+    </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-group ">
-        	<div class="input-group">
-            <div class="input-style ">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <ion-icon name="person-outline"></ion-icon>
-                    </span>                    
-                </div>
-                <input type="text" class="form-control" formControlName="email" placeholder="User Id" required="required">
-              </div>
+      <div class="form-group ">
+        <div class="input-group">
+          <div class="input-style ">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
             </div>
+            <input type="text" class="form-control" formControlName="email" placeholder="User Id" required="required">
+          </div>
         </div>
-		    <div class="form-group">
-            <div class="input-group">
-              <div class="input-style ">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <ion-icon name="key-outline"></ion-icon>
-                    </span>                    
-                </div>
-                <input type="password"formControlName="password" class="form-control" placeholder="Password" required="required">
-              </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-style ">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <ion-icon name="key-outline"></ion-icon>
+              </span>
             </div>
-        </div>        
-        <div class="form-group">
-            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-info buttonStyle">Log in</button>
-        </div>       
+            <input type="password" formControlName="password" class="form-control" placeholder="Password"
+              required="required">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-info buttonStyle">Log in</button>
+      </div>
     </form>
     <p class="text-center small pb-3">Forgot password . Contact Admin</p>
+  </ion-card-content>
 
-    <p class="text-center small">Or</p>
-    <p  class="text-center small">Login as employee</p>
-
-    </ion-card-content>
-  
 </ion-content>

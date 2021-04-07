@@ -1,79 +1,92 @@
-<ion-app >
+<ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay" *ngIf="ifLogin!=null">
       <ion-content>
-          <!-- <ion-list-header>Inbox2222</ion-list-header> -->
-          <ion-note>Hi , {{ifLogin ?ifLogin.user.name : ''}}</ion-note>
+        <!-- <ion-list-header>Inbox2222</ion-list-header> -->
+        <ion-note>Hi, {{ifLogin ?ifLogin.user.name : ''}}</ion-note>
 
-          <ion-menu-toggle auto-hide="false">
-            <ion-item routerLink="/dashboard" lines="none" style="height: 40px" aria-expanded="true"><i class="fas fa-tachometer-alt"></i> &nbsp; Dashboard</ion-item>
-          </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/dashboard" lines="none" style="height: 40px" aria-expanded="true"><i
+              class="fas fa-tachometer-alt"></i> &nbsp; Dashboard</ion-item>
+        </ion-menu-toggle>
 
-          <!-- <ion-menu-toggle auto-hide="false">
+        <!-- <ion-menu-toggle auto-hide="false">
             <ion-item  lines="none" style="height: 40px"> <i class="far fa-user"></i> &nbsp; My Profile</ion-item>
           </ion-menu-toggle> -->
 
-            <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
+        <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
 
-              <div class="panel panel-default" *ngIf="ifLogin.user.parent_id == 1">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h5 class="panel-title" style="margin-top:3px">
-                  <a class="collapsed" style="font-size: 16px;padding: 3px 1px 3px 8px;" role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    <i class="far fa-handshake"></i> &nbsp; Our Employee
-                    
-                  </a>
-                </h5>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">
-                    <ion-menu-toggle>
-                      <ion-list lines="none" class="p-0">
-                          <ion-label routerLink="/create-employee" >-Create Employee</ion-label><br>
-                          <ion-label routerLink="/employee-list">-Employee List</ion-label>
-                      </ion-list>
-                    </ion-menu-toggle> 
-                  </div>
-                </div>
-              </div>
+          <div class="panel panel-default" *ngIf="ifLogin.user.parent_id == 1">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h5 class="panel-title" style="margin-top:3px">
+                <a class="collapsed" style="font-size: 16px;padding: 3px 1px 3px 8px;" role="button"
+                  data-toggle="collapse" data-parent="#accordionMenu" href="#collapseOne" aria-expanded="false"
+                  aria-controls="collapseOne">
+                  <i class="far fa-handshake"></i> &nbsp; Our Employee
 
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h5 class="panel-title" style="margin-top: 3px;">
-                  <a class="collapsed" role="button" style="font-size: 16px;padding: 3px 1px 3px 8px;" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Product Inventory
-                  </a>
-                </h5>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <ion-menu-toggle auto-hide="false">
-                      <ion-list lines="none" class="p-0">
-                       <span *ngIf="ifLogin.user.parent_id == 1"><ion-label   routerLink="/add-product">-Add Product</ion-label><br></span> 
-                       <span *ngIf="ifLogin.user.parent_id == 1"><ion-label  routerLink="/add-custom-product">-Add Custom Product</ion-label><br></span> 
-                        <ion-label routerLink="/category-list">-Category List</ion-label><br>
-                        <ion-label routerLink="/current-inventory">-Current Inventory</ion-label><br>
-                    </ion-list>
-                  </ion-menu-toggle> 
-                  </div>
-                </div>
-              </div>
-
-              <ion-menu-toggle auto-hide="false">
-                <ion-item routerLink="/show-catalouge" lines="none" style="height: 40px">Product Catalogue</ion-item>
-              </ion-menu-toggle>
-
-              <ion-menu-toggle auto-hide="false">
-                <ion-item routerLink="/order-details" lines="none" style="height: 40px">Order Details</ion-item>
-              </ion-menu-toggle>
-              
-              <ion-menu-toggle auto-hide="false">
-                <ion-item routerLink="/orders" lines="none" style="height: 40px">Order Tracking </ion-item>
-              </ion-menu-toggle>
-
-              <ion-menu-toggle auto-hide="true">
-                <ion-item (click)="logout()" lines="none" style="height: 40px">Log Out</ion-item>
-              </ion-menu-toggle>
+                </a>
+              </h5>
             </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <ion-menu-toggle>
+                  <ion-list lines="none" class="p-0">
+                    <ion-label routerLink="/create-employee">-Create Employee</ion-label><br>
+                    <ion-label routerLink="/employee-list">-Employee List</ion-label>
+                  </ion-list>
+                </ion-menu-toggle>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h5 class="panel-title" style="margin-top: 3px;">
+                <a class="collapsed" role="button" style="font-size: 16px;padding: 3px 1px 3px 8px;"
+                  data-toggle="collapse" data-parent="#accordionMenu" href="#collapseTwo" aria-expanded="false"
+                  aria-controls="collapseTwo">
+                  Product Inventory
+                </a>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <ion-menu-toggle auto-hide="false">
+                  <ion-list lines="none" class="p-0">
+                    <span *ngIf="ifLogin.user.parent_id == 1">
+                      <ion-label routerLink="/add-product">-Add Product</ion-label><br>
+                    </span>
+                    <span *ngIf="ifLogin.user.parent_id == 1">
+                      <ion-label routerLink="/add-custom-product">-Add Custom Product</ion-label><br>
+                    </span>
+                    <ion-label routerLink="/category-list">-Category List</ion-label><br>
+                    <ion-label routerLink="/current-inventory">-Current Inventory</ion-label><br>
+                  </ion-list>
+                </ion-menu-toggle>
+              </div>
+            </div>
+          </div>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/show-catalouge" lines="none" style="height: 40px">Product Catalogue</ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/order-details" lines="none" style="height: 40px">Order Details</ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/orders" lines="none" style="height: 40px">Order Tracking </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/invoice-details" lines="none" style="height: 40px">Invoice </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="true">
+            <ion-item (click)="logout()" lines="none" style="height: 40px">Log Out</ion-item>
+          </ion-menu-toggle>
+        </div>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

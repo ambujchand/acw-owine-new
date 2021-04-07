@@ -1,64 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Invoice Details</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Invoice Details</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content [fullscreen]="true">
-      <div >
-        <ion-grid>
-          <ion-row>
-            <ion-col><strong>Purchase Invoice</strong></ion-col>
-            <ion-col style="border: 1px solid #6B3D1A;height: 33px;border-radius: 4px;">
-                <ion-datetime displayFormat="MMMM YYYY" placeholder="Select Month"(ionChange)="invoiceDetails($event)" style="padding-top: 5px;font-size: 12px;color: #6B3D1A;"></ion-datetime>
-            </ion-col>
-          </ion-row>
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col><strong>Purchase Invoice</strong></ion-col>
+        <ion-col style="border: 1px solid #6B3D1A;height: 33px;border-radius: 4px;">
+          <ion-datetime displayFormat="MMMM YYYY" placeholder="Select Month" (ionChange)="invoiceDetails($event)"
+            style="padding-top: 5px;font-size: 12px;color: #6B3D1A;"></ion-datetime>
+        </ion-col>
+      </ion-row>
 
-          <ion-row>
-            <ion-col><small style="color: #6B3D1A;font-weight: 800;">Billed for this months of Dec 2001</small></ion-col>
-            <ion-col size="3" style="text-align: end;">
-              <strong>$1000</strong>
-            </ion-col>
-          </ion-row>
+      <ion-row>
+        <ion-col><small style="color: #6B3D1A;font-weight: 800;">Billed for this months of Dec 2001</small></ion-col>
+        <ion-col size="3" style="text-align: end;">
+          <strong>$1000</strong>
+        </ion-col>
+      </ion-row>
 
-        </ion-grid>
+    </ion-grid>
 
 
-        <ion-grid style="text-align: center;">
-          <ion-row style="background-color: #f8f9fa;">
-            <ion-col>
-              <small>Date</small>
-            </ion-col>
-            <ion-col size="4">
-              <small>Invoive Number</small>
-            </ion-col>
-            <ion-col>
-              <small>Status</small>
-            </ion-col>
-            <ion-col>
-              <small>Paid By</small>
-            </ion-col>
-          </ion-row>
+    <ion-grid style="text-align: center;">
+      <ion-row style="background-color: #f8f9fa;">
+        <ion-col>
+          <small>Order Date</small>
+        </ion-col>
 
-          <ion-row *ngFor = "let invoice of invoices" style="text-align: center;">
-            <ion-col class="orderStype" (click)="invoiceGenarate(invoice.id)">
-              <small>{{invoice.order_date.slice(0, 10)}}</small>
-            </ion-col>
-            <ion-col class="orderStype" (click)="invoiceGenarate(invoice.id)">
-              <small>{{invoice.order_number.substring(0,12)}}..</small>
-            </ion-col>
-            <ion-col class="orderStype" size="2" (click)="invoiceGenarate(invoice.id)">
-              <small>{{ invoice.status == 1 ? 'Orderd': invoice.status == 2 ? 'Inprogress' : invoice.status == 3 ? 'Deliverd':''}}</small>
-            </ion-col>
-            <ion-col class="orderStype" (click)="invoiceGenarate(invoice.id)">
-              <small>{{ifLogin.user.name}}</small>
-            </ion-col>
-              </ion-row>
-        </ion-grid>
-      </div>
-  </ion-content>
-  
+        <ion-col>
+          <small>Invoice Number</small>
+        </ion-col>
+
+
+        <ion-col>
+          <small>Delivery Date</small>
+        </ion-col>
+
+
+        <ion-col>
+          <small>Status</small>
+        </ion-col>
+        <ion-col>
+          <small>Paid By</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngFor="let invoice of invoices" style="text-align: center;">
+        <ion-col class="orderStype" (click)="invoiceGenarate(invoice.id)">
+          <small>{{invoice.order_date.slice(0, 10)}}</small>
+        </ion-col>
+        <ion-col class="orderStype" (click)="invoiceGenarate(invoice.id)">
+          <small>{{invoice.order_number.substring(0,12)}}..</small>
+        </ion-col>
+        <ion-col class="orderStype" size="2" (click)="invoiceGenarate(invoice.id)">
+          <small>{{ invoice.status == 1 ? 'Ordered': invoice.status == 2 ? 'Inprogress' : invoice.status == 3 ?
+            'Delivered':''}}</small>
+        </ion-col>
+        <ion-col class="orderStype" (click)="invoiceGenarate(invoice.id)">
+          <small>{{ifLogin.user.name}}</small>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -11,14 +11,14 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-list.page.scss'],
 })
 export class EmployeeListPage implements OnInit {
-  allEmployees =[];
-  employee:any;
+  allEmployees = [];
+  employee: any;
   employeeId: any;
   value: any;
 
-  constructor(private loading : AlertService , private router: Router,private empservices: EmployeeService ,public alertController: AlertController) {
+  constructor(private loading: AlertService, private router: Router, private empservices: EmployeeService, public alertController: AlertController) {
   }
-  
+
   doRefresh(event) {
     console.log('Begin async operation');
     this.getEmployees();
@@ -32,7 +32,7 @@ export class EmployeeListPage implements OnInit {
     setTimeout(() => {
       console.log('Done');
       console.log(event);
-     // this.getSellers();
+      // this.getSellers();
       // if (this.categories.length == this.categories.length) {
       //   event.target.disabled = true;
       // }
@@ -40,75 +40,72 @@ export class EmployeeListPage implements OnInit {
     }, 2000);
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.getEmployees();
   }
 
 
-  findEmployeeName(event)
-  {
+  findEmployeeName(event) {
     console.log(this.allEmployees);
-    if (event.target.value.length>0) {
+    if (event.target.value.length > 0) {
       var data = [];
       console.log(this.employee);
-        for (let i = 0; i < this.employee.length; i++) {
-          const name = this.employee[i].name.toLowerCase();
-          if (name.slice(0, event.target.value.length) == event.target.value.toLowerCase()) {
-              data.push(this.employee[i]);
-          }
+      for (let i = 0; i < this.employee.length; i++) {
+        const name = this.employee[i].name.toLowerCase();
+        if (name.slice(0, event.target.value.length) == event.target.value.toLowerCase()) {
+          data.push(this.employee[i]);
         }
-        this.allEmployees = data;
-        console.log(this.allEmployees);
       }
-      else {
-            this.allEmployees=this.employee;
-          }
+      this.allEmployees = data;
+      console.log(this.allEmployees);
+    }
+    else {
+      this.allEmployees = this.employee;
+    }
   }
 
-  getEmployees()
-  {
-      this.loading.present();
-      const postData = new FormData();
-      postData.append('skip_id', JSON.stringify(this.value));
-      this.empservices.getEmployeeDetails(postData).subscribe(
+  getEmployees() {
+    this.loading.present();
+    const postData = new FormData();
+    postData.append('skip_id', JSON.stringify(this.value));
+    this.empservices.getEmployeeDetails(postData).subscribe(
       data => {
         console.log(data);
         this.employeeId = data.data;
         this.employee = data.data
         this.allEmployees = data.data
-        if(data.length>0)
-        {
+        if (data.length > 0) {
           this.value = this.value + data.data.length;
           this.allEmployees.push(data.data);
         }
         this.loading.dismiss();
       }, onerror => {
-      if (onerror.status==0) {
-        this.loading.presentToastWarning('check your internet connection.');
-        this.loading.dismiss();
-      } else if(onerror.status==500) {
-      this.loading.presentToastError('Server error.');
-      this.loading.dismiss();
-      }
+        if (onerror.status == 0) {
+          this.loading.presentToastWarning('check your internet connection.');
+          this.loading.dismiss();
+        } else if (onerror.status == 500) {
+          this.loading.presentToastError('Server error.');
+          this.loading.dismiss();
+        }
       });
   }
 
-  editEmployee(empDetails){
+  editEmployee(empDetails) {
     console.log(empDetails);
-    let navigationExtras : NavigationExtras = {
-      state :{
-        empDetails : empDetails
+    let navigationExtras: NavigationExtras = {
+      state: {
+        empDetails: empDetails
       }
     }
-    this.router.navigate(['/create-employee'] , navigationExtras);
+    this.router.navigate(['/create-employee'], navigationExtras);
   }
 
 
-  async deleteEmployee(id){
+  async deleteEmployee(id) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Are You Sure',
-      message: '<small>You Want To Delete This ?</small>',
+      message: '<small>Do you want to delete this ?</small>',
       buttons: [
         {
           text: 'Cancel',
@@ -117,26 +114,26 @@ export class EmployeeListPage implements OnInit {
         }, {
           text: 'Ok',
           handler: () => {
-              this.loading.present();
-              const updateData = new FormData();
-              updateData.append('id', id);
-              this.empservices.deleteEmployee(updateData).subscribe(
+            this.loading.present();
+            const updateData = new FormData();
+            updateData.append('id', id);
+            this.empservices.deleteEmployee(updateData).subscribe(
               data => {
                 console.log(data);
                 this.loading.dismiss();
                 this.loading.presentToastSuccess(data.success);
                 this.getEmployees();
-               // this.router.navigateByUrl('/employee-list');
+                // this.router.navigateByUrl('/employee-list');
               }, onerror => {
-              if (onerror.status==0) {
-                this.loading.presentToastWarning('check your internet connection.');
-                this.loading.dismiss();
-              } else if(onerror.status==500) {
-              this.loading.dismiss();
-              this.loading.presentToastError('Server error.');
-              }
+                if (onerror.status == 0) {
+                  this.loading.presentToastWarning('check your internet connection.');
+                  this.loading.dismiss();
+                } else if (onerror.status == 500) {
+                  this.loading.dismiss();
+                  this.loading.presentToastError('Server error.');
+                }
               });
-           }
+          }
         }
       ]
     });
@@ -145,7 +142,7 @@ export class EmployeeListPage implements OnInit {
   }
 
 
-  createEmployee(){
+  createEmployee() {
     this.router.navigateByUrl('/create-employee');
   }
 

@@ -1,20 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add Custom Product</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Add Custom Product</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">
 
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles">
+    <ion-refresher-content pullingText="Pull to refresh" refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
   <form [formGroup]="addCustomProductForm" (ngSubmit)="addCustomProduct()" class="mt-2">
@@ -38,44 +35,45 @@
       </ion-grid>
     </div>
 
-    <ion-card >
+    <ion-card>
       <ion-item>
-        <ion-label position="floating">Catagory Name</ion-label>
-        <ion-input required="true"  type="text" formControlName="catagory_name"></ion-input>
+        <ion-label position="floating">Category Name</ion-label>
+        <ion-input required="true" type="text" formControlName="catagory_name"></ion-input>
       </ion-item>
     </ion-card>
 
-    <ion-card >
+    <ion-card>
       <ion-item>
         <ion-label position="floating">Product Name</ion-label>
-        <ion-input required="true"  type="text" formControlName="product_name"></ion-input>
+        <ion-input required="true" type="text" formControlName="product_name"></ion-input>
       </ion-item>
     </ion-card>
- 
-<ion-card>
-  <ion-item>
-    <ion-label position="floating">Cost</ion-label>
-    <ion-input required="true" type="number" formControlName="cost"></ion-input>
-  </ion-item>
-</ion-card>
 
-<ion-card>
-  <ion-item>
-    <ion-label position="floating">Sale Price</ion-label>
-    <ion-input required="true" type="number" formControlName="sale_price"></ion-input>
-  </ion-item>
-</ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Cost</ion-label>
+        <ion-input required="true" type="number" formControlName="cost"></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Sale Price</ion-label>
+        <ion-input required="true" type="number" formControlName="sale_price"></ion-input>
+      </ion-item>
+    </ion-card>
 
 
 
-<ion-card >
-  <ion-item>
-    <ion-label position="floating">Product Description</ion-label>
-    <ion-textarea clearOnEdit="true" formControlName="product_desc"></ion-textarea>
-  </ion-item>
-</ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Product Description</ion-label>
+        <ion-textarea clearOnEdit="true" formControlName="product_desc"></ion-textarea>
+      </ion-item>
+    </ion-card>
 
-    <ion-button [disabled]="!addCustomProductForm.valid" type="submit" shape="round" slot="end" style="margin-left: 61vw;margin-bottom: 2px;">Submit</ion-button>
-    
-</form>
+    <ion-button [disabled]="!addCustomProductForm.valid" type="submit" shape="round" slot="end"
+      style="margin-left: 61vw;margin-bottom: 2px;">Submit</ion-button>
+
+  </form>
 </ion-content>
