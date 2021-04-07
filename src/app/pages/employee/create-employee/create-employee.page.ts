@@ -14,7 +14,7 @@ export class CreateEmployeePage implements OnInit {
 
   addEmployeeForm = this.formBuilder.group({
     id: [""],
-    name: ['',[Validators.required]],
+    name: ['',[Validators.required,Validators.minLength(2)]],
     username: [''],
     password: [''],
     confirm_password: [''],
