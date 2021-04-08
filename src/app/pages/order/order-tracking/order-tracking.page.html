@@ -27,38 +27,34 @@
     <ion-row *ngIf="orderDetails">
       <ion-col size="2">
         <div
-          *ngIf="orderDetails.status == 1 || orderDetails.status == 2 || orderDetails.status == 3 || orderDetails.status == 4 || orderDetails.status == 5 ">
+          *ngIf="orderDetails.status == 1">
+          <div class="trackRoundDefault" style="background-color: #DA980C;"></div>
+          <div class="barClassDefault" style="background-color: #dee2e6;"></div>
+        </div>
+        <div *ngIf="orderDetails.status == 2 || orderDetails.status == 3 || orderDetails.status == 4 || orderDetails.status == 5 ">
           <div class="trackRoundDefault" style="background-color: #DA980C;"></div>
           <div class="barClassDefault" style="background-color: #DA980C;"></div>
         </div>
       </ion-col>
       <ion-col>
-        <ion-list>
-          <ion-item>
             <small>Ordered</small>
-          </ion-item>
-        </ion-list>
       </ion-col>
     </ion-row>
 
     <ion-row *ngIf="orderDetails">
       <ion-col size="2">
-        <div *ngIf="orderDetails.status == 1">
+        <div *ngIf="orderDetails.status == 1 ">
           <div class="trackRoundDefault" style="background-color: #dee2e6;"></div>
           <div class="barClassDefault" style="background-color: #dee2e6;"></div>
         </div>
         <div
-          *ngIf="orderDetails.status == 2 || orderDetails.status == 3 || orderDetails.status == 4 || orderDetails.status == 5 ">
+          *ngIf="orderDetails.status == 3 || orderDetails.status == 4 || orderDetails.status == 5 ">
           <div class="trackRoundDefault" style="background-color: #DA980C;"></div>
           <div class="barClassDefault" style="background-color: #DA980C;"></div>
         </div>
       </ion-col>
       <ion-col>
-        <ion-list>
-          <ion-item>
             <small>Order Accepted</small>
-          </ion-item>
-        </ion-list>
       </ion-col>
     </ion-row>
 
@@ -74,11 +70,11 @@
         </div>
       </ion-col>
       <ion-col>
-        <ion-list>
-          <ion-item>
+        <!-- <ion-list>
+          <ion-item> -->
             <small>Shift To Driver</small>
-          </ion-item>
-        </ion-list>
+          <!-- </ion-item>
+        </ion-list> -->
       </ion-col>
     </ion-row>
     <ion-row *ngIf="orderDetails">
@@ -93,11 +89,7 @@
         </div>
       </ion-col>
       <ion-col>
-        <ion-list>
-          <ion-item>
             <small>In Transit</small>
-          </ion-item>
-        </ion-list>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="orderDetails">
@@ -105,23 +97,10 @@
         <div
           *ngIf="orderDetails.status == 1 || orderDetails.status == 2 || orderDetails.status == 3 || orderDetails.status == 4">
           <div class="trackRoundDefault" style="background-color: #dee2e6;"></div>
-          <div class="barClassDefault" style="background-color: #dee2e6;"></div>
-        </div>
-        <div *ngIf="orderDetails.status == 5 ">
-          <div class="trackRoundDefault" style="background-color: #DA980C;"></div>
-          <div class="barClassDefault" style="background-color: #DA980C;"></div>
-        </div>
-        <div
-          *ngIf="orderDetails.status == 1 || orderDetails.status == 2 || orderDetails.status == 3 || orderDetails.status == 4">
-          <div class="trackRoundDefault" style="background-color: #dee2e6;"></div>
         </div>
       </ion-col>
       <ion-col>
-        <ion-list>
-          <ion-item>
             <small>Delivered</small>
-          </ion-item>
-        </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>

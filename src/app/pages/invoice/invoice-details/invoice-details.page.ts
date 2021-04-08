@@ -19,6 +19,7 @@ export class InvoiceDetailsPage implements OnInit {
   
   Allinvoices: any;
   ifLogin: any;
+  totalAmount = 0;
 
   constructor(private loading : AlertService,private formBuilder: FormBuilder,private router: Router, private invoice : InvoiceService) { 
     this.ifLogin = JSON.parse(localStorage.getItem('user'));
@@ -44,7 +45,9 @@ export class InvoiceDetailsPage implements OnInit {
     data => {
       this.invoices = data.data;
       this.Allinvoices = data.data;
-      console.log(data);
+      for (let i = 0; i < data.data.length; i++) {
+       this.totalAmount += parseInt(data.data[i].total_amount);
+      }
       this.loading.dismiss();
     }, onerror => {
     if (onerror.status==0) {

@@ -30,12 +30,12 @@
         <ion-col>
           <img src="{{product.image}}" class="imageSize">
         </ion-col>
-        <ion-col class="textClass">
+        <ion-col >
           <b>{{product.product_name}}</b>
           <p>Sale : $ {{product.sale_price}}</p>
           <p>Qty : {{product.qty}}</p>
         </ion-col>
-        <ion-col class="iconClass">
+        <ion-col class="iconClass textClass">
           <ion-icon name="bag-add-outline" style="color: #6B3D1A;" (click)="productDetails(product)"></ion-icon>
           <ion-icon name="create-outline" (click)="editProduct(product)" *ngIf="ifLogin.user.parent_id==1"></ion-icon>
           <ion-icon name="close-outline" (click)="deleteProduct(product.id)" style="color: red;"
